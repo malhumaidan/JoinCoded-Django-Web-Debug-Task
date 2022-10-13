@@ -3,13 +3,14 @@ from .models import (
     Category, 
     Movies, 
     Location, 
-    Theather)
+    Theater,
+    )
 
 admin.site.register(
     [
         Category, 
         Movies, 
         Location, 
-        Theather,
+        Theater,
     ]
 )

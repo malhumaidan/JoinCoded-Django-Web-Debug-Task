@@ -15,13 +15,13 @@ def movie_list_view(request):
         'categories': [category.name.Title() for category in categories],
         'movies': new_movies_list
     }
-    return HttpResponse('index.html', context)
+    return HttpResponse(request, 'index.html', context)
 
 
 
 def movie_detail_view(request, movie_id):
     categories = Category.objects.all()
-    movie = Movies.objects.first() #this is supposed to be dynamic, as in it retrieves using the passed parameter
+    movie = Movies.objects.first(id=movie_id) #this is supposed to be dynamic, as in it retrieves using the passed parameter
     context = {
         'categories': [category.name.Title() for category in categories],
         'movie': {
